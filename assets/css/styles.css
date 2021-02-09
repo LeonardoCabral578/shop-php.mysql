@@ -1,5 +1,6 @@
-/*GENERALES*/
 
+/* GENERAL
+-------------------------------------------------------------------------------------------*/
 *{
     padding: 0px;
     margin: 0px;
@@ -45,16 +46,20 @@ td{
     width: 100px;
 }
 
-/*CONTAINER*/
+
+/* CONTAINER
+-------------------------------------------------------------------------------------------*/
 #container{
    width: 80%;
+   height: 100%;
    margin: 0px auto;
    box-shadow: 0px 0px 10px gray;
    background: white;
 }
 
-/*HEADER*/
 
+/* HEADER
+-------------------------------------------------------------------------------------------*/
 #header{
     height: 145px;
     background: #F0F0F0;
@@ -90,7 +95,9 @@ td{
     text-shadow: 0px 2px 1px #222222, 0px 0px 4px #01B1EA;
 }
 
-/*MENU*/
+
+/* MENU
+-------------------------------------------------------------------------------------------*/
 #menu{
     clear:both;
     background: #222;
@@ -106,9 +113,9 @@ td{
     margin-left: 25px;
 }
 
-#menu ul li{
+#menu ul li a{
     line-height: 55px;
-    float:left;
+    float: left;
     border-right: 1px solid #363636;
 }
 
@@ -129,14 +136,18 @@ td{
     background: #01B1EA;
 }
 
-/*CONTENT*/
+
+/* CONTENT
+-------------------------------------------------------------------------------------------*/
 #content{
     margin: 0px auto;
     overflow: hidden;
     background: white;
 }
 
-/*BARRA LATERAL*/
+
+/* BARRA LATERAL
+-------------------------------------------------------------------------------------------*/
 #lateral{
     width: 22%;
     min-height: 500px;
@@ -178,28 +189,21 @@ td{
     margin-bottom: 5px;
 }
 
-/*FORMS*/
+
+/* FORMS
+-------------------------------------------------------------------------------------------*/
 .form_container{
     width: 50%;
 }
 
-label,
-input[type="text"],
-input[type="password"],
-input[type="email"],
-input[type="number"],
-select, textarea{
+label, input[type="text"], input[type="password"], input[type="email"], input[type="number"], select, textarea{
     display:block;
     width: 95%;
     margin-top: 2px;
     margin-bottom: 2px;
 }
 
-input[type="text"],
-input[type="password"],
-input[type="email"],
-input[type="number"],
-select, textarea{
+input[type="text"], input[type="password"], input[type="email"], input[type="number"], select, textarea{
     border: 1px solid #C9C9C9;
     box-shadow: 0px 0px 2px #ccc inset;
     background: white;
@@ -208,16 +212,12 @@ select, textarea{
     transition: all 300ms;
 }
 
-input[type="text"]:focus,
-input[type="password"]:focus,
-input[type="email"]:focus{
+input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focus{
     border: 1px solid #1579b5;
     color: black;
 }
 
-input[type="button"],
-input[type="submit"],
-button, .button{
+input[type="button"], input[type="submit"], button, .button{
     display: block;
     border-radius: 2px;
     width: auto;
@@ -252,15 +252,14 @@ button, .button{
      border: 1px solid #cf1717;
 }
 
-label, 
-input[type="button"],
-input[type="submit"],
-button{
+label, input[type="button"], input[type="submit"], button{
     display:block;
     margin-top: 10px;
 }
 
-/*CENTRAL*/
+
+/* CENTRAL
+-------------------------------------------------------------------------------------------*/
 #central{
     width: 72%;
     min-height: 500px;
@@ -281,7 +280,9 @@ button{
     padding-top: 0px;
 }
 
-/*PRODUCTOS*/
+
+/* PRODUCTOS
+-------------------------------------------------------------------------------------------*/
 .product{
     width: 30%;
     float:left;
@@ -359,18 +360,21 @@ button{
 }
 
 
-/*FOOTER*/
+/* FOOTER
+-------------------------------------------------------------------------------------------*/
 #footer{
-    clear: both;
-    text-align: center;
-    padding-top:10px;
-    padding-bottom: 10px;
-    color: white;
-    background: #222222;
-    border-top: 4px solid #01B1EA;
+        clear: both;
+        text-align: center;
+        padding-top:10px;
+        padding-bottom: 10px;
+        color: white;
+        background: #222222;
+        border-top: 4px solid #01B1EA;
 }
 
-/*CARRITO*/
+
+/* CARRITO
+-------------------------------------------------------------------------------------------*/
 .delete-carrito{
    width: 295px;
    float: left; 
