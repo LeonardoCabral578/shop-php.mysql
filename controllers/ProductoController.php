@@ -5,6 +5,7 @@ class ProductoController {
 # FUN
 #---------------------------------------------------#
     public function index() {
-        echo "Controlador Productos, Acción index";
+        // Renderizar vista
+        require_once 'views/producto/destacados.php';
     }
 }
