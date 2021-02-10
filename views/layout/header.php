@@ -18,7 +18,7 @@
         <header id="header">
             <div id="logo">
                 <img src="<?=base_url?>assets/img/camiseta.png" alt="Camiseta Logo">
-                <a href="index.php">
+                <a href="<?=base_url?>">
                     Tienda de camisetas
                 </a>
             </div>
@@ -26,27 +26,18 @@
 
         <!-- MENÚ -->
         <!------------------------------------------------------------------------------------------->
+        <?php $categorias = Utils::showCategorias(); ?>
         <nav id="menu">
             <ul>
                 <li>
-                    <a href="">
+                    <a href="<?=base_url?>">
                         Inicio
                     </a>
-                    <a href="">
-                        Categoria 1
-                    </a>
-                    <a href="">
-                        Categoria 2
-                    </a>
-                    <a href="">
-                        Categoria 3
-                    </a>
-                    <a href="">
-                        Categoria 4
-                    </a>
-                    <a href="">
-                        Categoria 5
-                    </a>
+                    <?php while($cat = $categorias->fetch_object()): ?>
+                        <li>
+                            <a href=""><?=$cat->nombre?></a>
+                        </li>
+                    <?php endwhile; ?>
                 </li>
             </ul>
         </nav>
