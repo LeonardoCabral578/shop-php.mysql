@@ -1,17 +1,25 @@
 <?php
-# AUTOLOAD/PARAMETERS/HEADER/SIDEBAR
+# REQUIRES & FUN
 #-------------------------------------------------------------------------------------------#
-require_once 'autoload.php';
-require_once 'config/parameters.php';
-require_once 'views/layout/header.php';
-require_once 'views/layout/sidebar.php';
 
-# FUN
-#-------------------------------------------------------------------------------------------#
-	function show_error(){
-		$error = new ErrorController();
-		$error->index();
-	}
+	# SESSION
+	#---------------------------------------------------#
+		session_start();
+
+	# AUTOLOAD/DB/PARAMETERS/HEADER/SIDEBAR
+	#---------------------------------------------------#
+		require_once 'autoload.php';
+		require_once 'config/db.php';
+		require_once 'config/parameters.php';
+		require_once 'views/layout/header.php';
+		require_once 'views/layout/sidebar.php';
+
+	# FUN
+	#---------------------------------------------------#
+		function show_error(){
+			$error = new ErrorController();
+			$error->index();
+		}
 
 # CONTROLLERS
 #-------------------------------------------------------------------------------------------#
