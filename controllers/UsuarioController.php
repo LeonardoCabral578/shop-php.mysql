@@ -15,17 +15,68 @@ class UsuarioController {
 
         public function save() {
             if(isset($_POST)){
-                $usuario = new Usuario();
-                $usuario->setNombre($_POST['nombre']);
-                $usuario->setApellidos($_POST['apellidos']);
-                $usuario->setEmail($_POST['email']);
-                $usuario->setPassword($_POST['password']);
-                $save = $usuario->save();
-                
-                if($save){
-                    $_SESSION['register'] = "complete";
+                $nombre = isset($_POST['nombre']) ? $_POST['nombre'] : false;
+                $apellidos = isset($_POST['apellidos']) ? $_POST['apellidos'] : false;
+                $email = isset($_POST['email']) ? $_POST['email'] : false;
+                $password = isset($_POST['password']) ? $_POST['password'] : false;
+
+                // Array de errores
+                $errores = array();
+
+                # VALIDACIÓN
+                #---------------------------------------------------#
+
+                // NOMBRE
+                if (!empty($nombre) && !is_numeric($nombre) && !preg_match("/[0-9]/", $nombre)) {
+                    $nombre_validado = true;
+                } else {
+                    $nombre_validado = false;
+                    $errores['nombre'] = "El nombre no es válido";
+                }
+
+                // APELLIDOS
+                if (!empty($apellidos) && !is_numeric($apellidos) && !preg_match("/[0-9]/", $apellidos)) {
+                    $apellidos_validado = true;
+                } else {
+                    $apellidos_validado = false;
+                    $errores['apellidos'] = "El apellido no es válido";
+                }
+
+                // EMAIL
+                if (!empty($email) && filter_var($email, FILTER_VALIDATE_EMAIL)) {
+                    $email_validado = true;
+                } else {
+                    $email_validado = false;
+                    $errores['email'] = "El email no es válido";
+                }
+
+                // PASSWORD
+                if (!empty($password)) {
+                    $password_validado = true;
+                } else {
+                    $password_validado = false;
+                    $errores['password'] = "La contraseña está vacía";
+                }
+
+                # REGISTRO EN BD
+                #---------------------------------------------------#
+                if (count($errores) == 0) {
+                    $usuario = new Usuario();
+                    $usuario->setNombre($nombre);
+                    $usuario->setApellidos($apellidos);
+                    $usuario->setEmail($email);
+                    $usuario->setPassword($password);
+                    $save = $usuario->save();
+                    
+                    if($save){
+                        $_SESSION['register'] = "complete";
+                    }else{
+                        $_SESSION['register'] = "failed";
+                        $_SESSION['errores']['general'] = "Fallo al guardar el usuario!";
+                    }
                 }else{
                     $_SESSION['register'] = "failed";
+                    $_SESSION['errores'] = $errores;
                 }
             }else{
                 $_SESSION['register'] = "failed";
