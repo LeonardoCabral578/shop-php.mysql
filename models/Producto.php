@@ -2,7 +2,8 @@
 
 class Producto {
 
-    #-------------------- ATR --------------------#
+    # ATR
+    #---------------------------------------------------#
         private $id;
         private $categoria_id;
         private $nombre;
@@ -19,7 +20,8 @@ class Producto {
             $this->db = Database::connect();
         }
 
-    #-------------------- GET/SET --------------------#
+    # GET/SET
+    #---------------------------------------------------#
         public function getId(){
             return $this->id;
         }
@@ -110,7 +112,8 @@ class Producto {
             return $this;
         }
 
-    #-------------------- FUN --------------------#
+    # FUN
+    #---------------------------------------------------#
         public function getAll(){
             $productos = $this->db->query("SELECT * FROM productos ORDER BY id DESC");
             
@@ -122,7 +125,8 @@ class Producto {
             $sql = "INSERT INTO productos VALUES(
                     null, {$this->getCategoria_id()},'{$this->getNombre()}', '{$this->getDescripcion()}', 
                     {$this->getPrecio()}, {$this->getStock()}, null, CURDATE(), 
-                    null)";
+                    '{$this->getImagen()}')";
+            
             $save = $this->db->query($sql);
             
             $result = false;
