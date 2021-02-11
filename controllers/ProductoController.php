@@ -22,8 +22,6 @@ class ProductoController {
     public function crear(){
         Utils::isAdmin();
 
-
-
         require_once 'views/producto/crear.php';
     }
 
@@ -78,5 +76,32 @@ class ProductoController {
         header('Location:'.base_url.'producto/gestion');
     }
 
+    public function edit(){
+        Utils::isAdmin();
+
+        var_dump($_GET);
+    }
+
+    public function delete(){
+        Utils::isAdmin();
+
+        if(isset($_GET['id'])){
+            $id = $_GET['id'];
+            $producto = new Producto();
+            $producto->setId($id);
+
+            $delete = $producto->delete();
+
+            if($delete){
+                $_SESSION['delete'] = "complete";
+            }else{
+                $_SESSION['delete'] = "failed";
+            }
+        }else{
+            $_SESSION['delete'] = "failed";
+        }
+
+        header('Location:'.base_url.'producto/gestion');
+    }
 
 }
