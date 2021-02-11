@@ -6,9 +6,9 @@
         <h3>Mi carrito</h3>
         <ul>
             <?php $stats = Utils::statsCarrito()?>
-            <li><a href="<?=base_url?>/carrito/index">Productos (<?=$stats['count']?>)</a></li>
-            <li><a href="<?=base_url?>/carrito/index">Total: $ <?=$stats['total']?></a></li>
-            <li><a href="<?=base_url?>/carrito/index">Ver el carrito</a></li>
+            <li><a href="<?=base_url?>carrito/index">Productos (<?=$stats['count']?>)</a></li>
+            <li><a href="<?=base_url?>carrito/index">Total: $ <?=$stats['total']?></a></li>
+            <li><a href="<?=base_url?>carrito/index">Ver el carrito</a></li>
         </ul>
     </div>
 
@@ -31,8 +31,8 @@
         <?php endif; ?>
         <ul>
             <?php if(isset($_SESSION['admin'])): ?>
-            <li><a href="<?=base_url?>/categoria/index">Gestionar categorias</a></li>
-            <li><a href="<?=base_url?>/producto/gestion">Gestionar productos</a></li>
+            <li><a href="<?=base_url?>categoria/index">Gestionar categorias</a></li>
+            <li><a href="<?=base_url?>producto/gestion">Gestionar productos</a></li>
             <li><a href="#">Gestionar pedidos</a></li>
             <?php endif; ?>
 
