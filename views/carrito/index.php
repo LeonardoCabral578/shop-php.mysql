@@ -22,15 +22,23 @@
                         <img src="<?= base_url ?>assets/img/camiseta.png" class="img_carrito" alt="Img Producto">
                     <?php endif; ?>
                 </td>
+
                 <td>
                     <a href="<?= base_url ?>producto/ver&id=<?= $producto->id ?>"><?= $producto->nombre ?></a>
                 </td>
+
                 <td>
                     $ <?= $producto->precio ?>
                 </td>
+
                 <td>
                     <?= $units ?>
+                    <div class="updown-unidades">
+                    <a href="<?=base_url?>carrito/down&index=<?=$indice?>" class="button">-</a>
+                    <a href="<?=base_url?>carrito/up&index=<?=$indice?>" class="button">+</a>
+                    </div>
                 </td>
+
                 <td>
                     <a href="<?= base_url ?>carrito/delete&index=<?=$indice?>" class="button button-carrito button-red">Quitar producto</a>
                 </td>
