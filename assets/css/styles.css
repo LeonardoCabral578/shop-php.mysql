@@ -345,12 +345,12 @@ label, input[type="button"], input[type="submit"], button{
 }
 
 #detail-product .description{
-    margin-bottom: 20px;
+    margin-bottom: 40px;
 }
 
 #detail-product .price{
     margin-bottom: 10px;
-    font-size: 20px;
+    font-size: 30px;
     color: #444;
 }
 

@@ -5,12 +5,25 @@ class ProductoController {
 
 # FUN
 #---------------------------------------------------#
-    public function index() {
+    public function index(){
         $producto = new Producto();
         $productos = $producto->getRandom(6);
 
         // Renderizar vista
         require_once 'views/producto/destacados.php';
+    }
+
+    public function ver(){
+        if(isset($_GET['id'])){
+            $id = $_GET['id'];
+
+            $producto = new Producto();
+            $producto->setId($id);
+
+            $product = $producto->getOne();
+
+        }
+        require_once 'views/producto/ver.php';
     }
 
     public function gestion(){
