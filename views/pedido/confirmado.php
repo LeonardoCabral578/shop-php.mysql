@@ -6,7 +6,7 @@
     </p>
     <br>
 
-    <?php if ($pedido) : ?>
+    <?php if (isset($pedido)) : ?>
         <h3>Datos del pedido:</h3>
         <br>
 
